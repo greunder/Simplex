@@ -5,13 +5,16 @@
 # Classe : ITS2
 # Sujet : Methode Simplexe ' Linear Programming'
 # Professeur : Thiago ABREU
+# Lien Github : https://github.com/greunder/Simplex
 # =============================================================================
 
 import numpy as np
 import warnings
 from IHM_SIMPLEX_MARIETTE_Rayan.py import button_click
 
-button_click()
+button_click()# APPEl FONCTION IHM PAS ENCORE FONCTIONNEL
+                #METTRE EN COMMENTAIRE POUR TESTER LES CALCULS
+
 
 def Fonction_Simplex(type, A, B, C, D, M):
     
@@ -186,7 +189,13 @@ def Fonction_Simplex(type, A, B, C, D, M):
 
     return (z_optimal[0, 0], X)
 
-
+if __name__ == '__main__':
+    np.set_printoptions(suppress=True)#Maximisation ou Minimisation
+    (z, x) = Fonction_Simplex('max', np.array([[1, 1, -2, 0], [0, 0, 1, 1], [1, 0,1, 0] , [0, 1,0, 1]]), #A,B,C,D
+                            np.array([[200], [300], [400], [300]]),  #S                                          #b_
+                            np.array([[30], [36], [25], [30]]),   # Fonction Objective Z                           
+                            np.array([['='], ['='], ['<='], ['<=']]),  #Signe 
+                  0)         
 def minBlandWithMask(x, mask):
     
     min = 0
@@ -219,11 +228,5 @@ def Col_to_col(col, h):
 
     return col
 
-if __name__ == '__main__':
-    np.set_printoptions(suppress=True)#Maximisation ou Minimisation
-    (z, x) = Fonction_Simplex('max', np.array([[1, 1, -2, 0], [0, 0, 1, 1], [1, 0,1, 0] , [0, 1,0, 1]]), #A,B,C,D
-                            np.array([[200], [300], [400], [300]]),  #S                                          #b_
-                            np.array([[30], [36], [25], [30]]),   # Fonction Objective Z                           
-                            np.array([['='], ['='], ['<='], ['<=']]),  #Signe 
-                  0)         
+
 
