@@ -190,12 +190,38 @@ def Fonction_Simplex(type, A, B, C, D, M):
     return (z_optimal[0, 0], X)
 
 if __name__ == '__main__':
+    
+    #EXERCICE 3
+    
     np.set_printoptions(suppress=True)#Maximisation ou Minimisation
     (z, x) = Fonction_Simplex('max', np.array([[1, 1, -2, 0], [0, 0, 1, 1], [1, 0,1, 0] , [0, 1,0, 1]]), #A,B,C,D
-                            np.array([[200], [300], [400], [300]]),  #S                                          #b_
+                            np.array([[200], [300], [400], [300]]),  #S                                          
                             np.array([[30], [36], [25], [30]]),   # Fonction Objective Z                           
                             np.array([['='], ['='], ['<='], ['<=']]),  #Signe 
                   0)         
+    
+    #EXERCICE 2
+    
+    
+    #     np.set_printoptions(suppress=True)#Maximisation ou Minimisation
+    # (z, x) = Fonction_Simplex('max', np.array([[400, 300], [300, 400], [200 ,500]]), #A,B,C,D
+    #                         np.array([[25000], [27000], [30000]),  #S                                          
+    #                         np.array([[20000], [25000], [25]]),   # Fonction Objective Z                           
+    #                         np.array([['=>'], ['=>'], ['=>']]),  #Signe 
+    #               0)         
+    
+    
+    
+    #EXERCICE 1
+    
+    #     np.set_printoptions(suppress=True)#Maximisation ou Minimisation
+    # (z, x) = Fonction_Simplex('max', np.array([[1, 2, 1.5], [2/3, 2/3, 1], [1/2, 1/3,1/2]]), #A,B,C,D
+    #                         np.array([[12000], [4600], [2400]),  #S                                          
+    #                         np.array([[11], [16], [15]]),   # Fonction Objective Z                           
+    #                         np.array([['<='], ['<='], ['<=']]),  #Signe 
+    #               0)        
+    
+    
 def minBlandWithMask(x, mask):
     
     min = 0
